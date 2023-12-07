@@ -14,4 +14,10 @@
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "GOPATH"))
 
+;; https://github.com/wbolster/emacs-direnv
+(use-package direnv
+  :demand t
+  :config
+  (direnv-mode))
+
 (provide 'sm-path)
