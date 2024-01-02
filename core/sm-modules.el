@@ -28,9 +28,13 @@
 (setq byte-compile-warnings '(cl-functions))
 (require 'use-package)
 
-;; Hook up use-package's support for chords (simultaneous pairs and/or
-;; rapid pairs of keystrokes).  This obviates explicitly loading the
-;; keychord package.
+;; Note: pinned key-chord to commit
+;; "68264d09593e69c1d4773859ac570bd9feb008d9 in
+;; .emacs.d/straight/versions/default.el to avoid intermittent
+;; failures.  See https://github.com/emacsorphanage/key-chord/issues/7
+;; https://github.com/emacsorphanage/key-chord/issues/8
+;; https://github.com/emacsorphanage/key-chord/issues/9
+;; https://github.com/emacsorphanage/key-chord/pull/2
 (use-package use-package-chords
   :demand
   :config (key-chord-mode 1))

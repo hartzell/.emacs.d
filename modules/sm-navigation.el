@@ -62,9 +62,11 @@
 ;; avy
 ;; A better jump to char and line.
 (use-package avy
-  :chords (("jk" . avy-goto-char)
+  :chords (("jk" . avy-goto-char-2)
            ("jl" . avy-goto-line)
-           ("jj" . avy-goto-word-1)           )
+           ;; ("jj" . avy-goto-word-1)
+           ("jj" . avy-goto-char-timer)
+           )
   :config
   (setq avy-style 'at))
 

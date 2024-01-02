@@ -55,7 +55,7 @@
  ("hydra" . "317e1de33086637579a7aeb60f77ed0405bf359b")
  ("inf-ruby" . "5a8b87fe6873bc684552cd993e375c382d729753")
  ("js2-mode" . "dd7abb28844f745f7520db87695b7aa579cbe683")
- ("key-chord" . "e724def60fdf6473858f2962ae276cf4413473eb")
+ ("key-chord" . "68264d09593e69c1d4773859ac570bd9feb008d9")
  ("kotlin-mode" . "fddd747e5b4736e8b27a147960f369b86179ddff")
  ("let-alist" . "021fc10df2e44faba4728d849ee767cf890aa51a")
  ("lsp-mode" . "c8bbdb80ed2dbfdbf55b6c4058308dab092306b5")
