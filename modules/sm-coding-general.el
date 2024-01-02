@@ -54,7 +54,9 @@
   ;; sync methods: none, full, incremental, or nil (nil == use lsp suggestion)
   (lsp-document-sync-method nil)
   (lsp-prefer-flymake nil) ;; t(flymake), nil(lsp-ui/flycheck), or :none
-  (lsp-pylsp-server-command "/compbio/home/george.hartzell/tmp/lsp-venv/bin/pylsp")
+  (lsp-pylsp-server-command
+   (substitute-in-file-name "$HOME/tmp/lsp-venv/bin/pylsp"))
+
   :hook ((go-mode . lsp-deferred)
          (python-mode . lsp-deferred))
   :bind
