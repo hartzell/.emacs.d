@@ -55,8 +55,7 @@
   (lsp-document-sync-method nil)
   (lsp-prefer-flymake nil) ;; t(flymake), nil(lsp-ui/flycheck), or :none
   (lsp-pylsp-server-command
-   (substitute-in-file-name "$HOME/tmp/lsp-venv/bin/pylsp"))
-
+   (expand-file-name "~/tmp/lsp-venv/bin/pylsp"))
   :hook ((go-mode . lsp-deferred)
          (python-mode . lsp-deferred))
   :bind

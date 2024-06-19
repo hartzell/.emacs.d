@@ -46,12 +46,14 @@
           ;; (load-theme 'wombat t)
           ;; (load-theme 'distinguished t)
           ;; (load-theme 'moe-dark t)
+          ;; (load-theme 'misterioso t)
           (if (display-graphic-p)
-              (load-theme 'clues t)
-            (load-theme 'clues t)
+              (load-theme 'moe-dark t)
+            (load-theme 'moe-dark t)
             ;; use this one for demo'ing git-commit mode in terminal window
             ;; (load-theme 'moe-dark t)
-            ))
+            )
+          )
 
 (use-package rainbow-mode
   :commands rainbow-mode)
