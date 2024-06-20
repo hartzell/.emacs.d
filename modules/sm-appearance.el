@@ -50,8 +50,6 @@
           (if (display-graphic-p)
               (load-theme 'moe-dark t)
             (load-theme 'moe-dark t)
-            ;; use this one for demo'ing git-commit mode in terminal window
-            ;; (load-theme 'moe-dark t)
             )
           )
 
