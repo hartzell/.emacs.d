@@ -47,7 +47,12 @@ git or hg repository is found in the buffer-local working dir."
 (use-package magit-section
   :after magit)
 
+
 ;; Git forge w/ magit.
+(use-package emacsql-sqlite
+  :straight (:host github :repo "magit/emacsql")
+  :ensure t)
+
 (use-package forge
   :after magit)
 
@@ -97,10 +102,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; Need to load this on demand so that it can emplace hooks that will
 ;; load the heavy bits of git-commit if/when needed.
-(use-package git-commit
-  :demand t
-  :config
-  (global-git-commit-mode t))
+;; (use-package git-commit
+;;   :demand t
+;;   :config
+;;   (global-git-commit-mode t))
 
 ;; visit previous versions of files
 (use-package git-timemachine)

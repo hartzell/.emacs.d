@@ -14,6 +14,8 @@
 
 ;; Fix mac-port defaults.
 (when (equal system-type 'darwin)
+  ;; https://apple.stackexchange.com/questions/467216/emacs-starts-up-without-window-focus-in-macos-sonoma
+  ;; (select-frame-set-input-focus (selected-frame))
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
   (global-set-key [(super v)] 'yank)
