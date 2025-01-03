@@ -43,7 +43,7 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :config (add-hook 'markdown-mode-hook (lambda () (setq display-line-numbers t)))
+  :config (add-hook 'markdown-mode-hook (lambda () (display-line-numbers-mode t)))
   )
 
 (use-package markdownfmt

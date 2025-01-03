@@ -8,8 +8,10 @@
 (defvar sm/var-font-name "InconsolataGo Nerd Font Mono")
 (defvar sm/font-height 160)
 
-;; Native line numbers and fringe setup.
+;; Native line numbers and fringe setup, line numbers are "visually
+;; relative" to line containing point.
 (setq-default display-line-numbers-width 4)
+(setq-default display-line-numbers-type 'visual)
 
 (use-package distinguished-theme)
 (use-package moe-theme)

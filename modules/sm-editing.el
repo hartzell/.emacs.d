@@ -12,7 +12,7 @@
   :hook (after-init . global-auto-revert-mode)
   :delight auto-revert-mode)
 
-(add-hook 'prog-mode-hook (lambda () (setq display-line-numbers t)))
+(add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode t)))
 
 ;; Don't use tabs for indent; replace tabs with two spaces.
 (setq-default tab-width 2)
