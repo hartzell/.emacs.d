@@ -56,8 +56,12 @@
   (lsp-prefer-flymake nil) ;; t(flymake), nil(lsp-ui/flycheck), or :none
   (lsp-pylsp-server-command
    (expand-file-name "~/tmp/lsp-venv/bin/pylsp"))
+  (lsp-semantic-tokens-enable t)
+  (lsp-semantic-tokens-honor-refresh-requests t)
+  (lsp-terraform-ls-prefill-required-fields t)
   :hook ((go-mode . lsp-deferred)
-         (python-mode . lsp-deferred))
+         (python-mode . lsp-deferred)
+         (terraform-mode . lsp-deferred))
   :bind
   (:map lsp-mode-map
         ("C-c r" . lsp-rename))
