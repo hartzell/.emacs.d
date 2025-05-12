@@ -21,15 +21,18 @@
   :after python
   :hook (python-mode . py-isort-enable-on-save))
 
-;; (use-package lsp-pyright
-;;   :straight `(lsp-pyright :repo "emacs-lsp/lsp-pyright"
-;;                           :host github)
-;;   :ensure t
-;;   :init
-;;   (setq lsp-pyright-multi-root nil)
-;;   :hook (python-mode . (lambda ()
-;;                          (require 'lsp-pyright)
-;;                          (lsp))))
+(use-package lsp-pyright
+  :straight `(lsp-pyright :repo "emacs-lsp/lsp-pyright"
+                          :host github)
+  :ensure t
+  :init
+  (setq lsp-pyright-multi-root nil)
+  :custom
+  (lsp-pyright-langserver-command
+   (expand-file-name "~/tmp/basedpyright-venv/bin/basedpyright"))
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp-deferred))))
 
 
 (setenv "PYTHONIOENCODING" "utf8")

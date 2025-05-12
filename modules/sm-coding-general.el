@@ -54,13 +54,10 @@
   ;; sync methods: none, full, incremental, or nil (nil == use lsp suggestion)
   (lsp-document-sync-method nil)
   (lsp-prefer-flymake nil) ;; t(flymake), nil(lsp-ui/flycheck), or :none
-  (lsp-pylsp-server-command
-   (expand-file-name "~/tmp/lsp-venv/bin/pylsp"))
   (lsp-semantic-tokens-enable t)
   (lsp-semantic-tokens-honor-refresh-requests t)
   (lsp-terraform-ls-prefill-required-fields t)
   :hook ((go-mode . lsp-deferred)
-         (python-mode . lsp-deferred)
          (terraform-mode . lsp-deferred))
   :bind
   (:map lsp-mode-map
