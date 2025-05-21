@@ -254,4 +254,10 @@
   (volatile-highlights-mode t)
   )
 
+(use-package powerthesaurus
+  :after hydra
+  :chords (("pt" . powerthesaurus-hydra/body))
+  )
+
 (provide 'sm-editing)
+

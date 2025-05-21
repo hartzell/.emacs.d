@@ -57,7 +57,9 @@ git or hg repository is found in the buffer-local working dir."
   :after magit)
 
 ;; smerge hydra for quicker confluct merging!
-(use-package hydra)
+;; need demand so that hydra's available with powerthesaurus loads
+(use-package hydra
+  :demand t)
 (use-package smerge-mode
   :commands smerge-mode
   :requires hydra
