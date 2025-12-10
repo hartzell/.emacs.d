@@ -206,16 +206,23 @@
     (require 'u-vm-color)
     (add-hook 'vm-summary-mode-hook 'u-vm-color-summary-mode)
     (add-hook 'vm-select-message-hook 'u-vm-color-fontify-buffer)
-    ;;  It may be necessary to add the following, which probably comes from
-    ;;  a bug in my code...
-    (defadvice vm-decode-mime-message (after u-vm-color activate)
+    ;; ;;  It may be necessary to add the following, which probably comes from
+    ;; ;;  a bug in my code...
+    ;; (defadvice vm-decode-mime-message (after u-vm-color activate)
+    ;;   (u-vm-color-fontify-buffer-even-more))
+    ;;
+    ;; ;;  If you are using auto-fill, ie when the variable
+    ;; ;;  `vm-fill-paragraphs-containing-long-lines' is not nil, you should
+    ;; ;;  also add this:
+    ;; (defadvice vm-fill-paragraphs-containing-long-lines
+    ;;     (after u-vm-color activate)
+    ;;   (u-vm-color-fontify-buffer))
+    (defun u-vm-color-helper (&rest args)
+      "Function to invoke u-vm-color-fontify-buffer-even-more so that I
+       can use defadvice"
       (u-vm-color-fontify-buffer-even-more))
-    ;;  If you are using auto-fill, ie when the variable
-    ;;  `vm-fill-paragraphs-containing-long-lines' is not nil, you should
-    ;;  also add this:
-    (defadvice vm-fill-paragraphs-containing-long-lines
-        (after u-vm-color activate)
-      (u-vm-color-fontify-buffer))
+    (advice-add 'vm-decode-mime-message :after #'u-vm-color-helper)
+    (advice-add 'vm-fill-paragraphs-containing-long-lines :after #'u-vm-color-helper)
 
     (require 'vm-pine)
     ;; (require 'vm-summary-faces)
