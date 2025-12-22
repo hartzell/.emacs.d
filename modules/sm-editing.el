@@ -246,7 +246,7 @@
   :init
   (ctrlf-mode +1)
   :config
-  (add-to-list 'ctrlf-minibuffer-bindings '("C-r" . nil)))
+  (define-key ctrlf-minibuffer-mode-map (kbd  "C-r") nil))
 
 (use-package volatile-highlights
   :demand
