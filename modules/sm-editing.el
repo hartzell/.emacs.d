@@ -254,6 +254,11 @@
   (volatile-highlights-mode t)
   )
 
+;; This is needed to work around problem where powerthesaurus causes
+;; the emacs distro version of transient to be loaded.  That works for
+;; powerthesaurus but then magit fails.
+(use-package transient)
+
 (use-package powerthesaurus
   :after hydra
   :chords (("pt" . powerthesaurus-hydra/body))

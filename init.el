@@ -1,5 +1,12 @@
 ;;; init.el --- Start of the Emacs initialisation process.
 
+;; E.g., useful for debugging problems where a package
+;;(e.g. transient) is being loaded from the emacs distro instead of
+;;straight's copy.
+;; (eval-after-load "transient" '(debug))
+;; This will show you where the copy that's being used came from:
+;; (symbol-file 'transient-define-prefix)
+
 ;; Increase the GC threshold as soon as possible.
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 1.0)
