@@ -56,7 +56,8 @@
   (lsp-semantic-tokens-honor-refresh-requests t)
   (lsp-terraform-ls-prefill-required-fields t)
   :hook ((go-mode . lsp-deferred)
-         (terraform-mode . lsp-deferred))
+         (terraform-mode . lsp-deferred)
+         (python-mode . lsp-deferred))
   :bind
   (:map lsp-mode-map
         ("C-c r" . lsp-rename))
