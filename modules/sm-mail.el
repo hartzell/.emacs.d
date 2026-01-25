@@ -118,7 +118,8 @@
 
     ;; use IMAP instead... (setq vm-primary-inbox "~/mail/inbox")
     ;; (setq vm-primary-inbox "imap-ssl:griffon.alerce.com:23:INBOX:login:hartzell:*")
-    (setq vm-primary-inbox "imap-ssl:corvid.alerce.com:993:inbox:login:hartzell:*")
+    ;; (setq vm-primary-inbox "imap-ssl:corvid.alerce.com:993:inbox:login:hartzell:*")
+    (setq vm-primary-inbox "imap-ssl:astur.alerce.com:993:inbox:login:hartzell:*")
     (setq vm-spool-files
           '(
             "/var/mail/hartzell"
@@ -137,6 +138,7 @@
             ("imap-ssl:corvid.alerce.com:993:inbox:login:hartzell:*" "hartzell@alerce.com")
             ("imap-ssl:corvid.alerce.com:993:inbox:login:hartzell@georgehartzell.com:*" "georgehartzell.com-imap")
             ("imap-ssl:corvid.alerce.com:993:inbox:login:hartzell@baulines.com:*" "baulines.com-imap")
+            ("imap-ssl:astur.alerce.com:993:inbox:login:hartzell:*" "hartzell@astur.alerce.com")
             ))
     (setq vm-imap-auto-expunge-alist
           '(
