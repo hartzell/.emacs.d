@@ -71,15 +71,19 @@
   (add-hook 'straight-use-package-pre-build-functions #'my-vm-build)
 
   (use-package vm
-    :straight (vm :type git :host github :repo "emacsmirror/vm"
-                  :fork (:host github
-                               :repo "hartzell/vm"
-                               :branch "oldie"
-                               ;; :branch "wip"
-                               )
+    :straight (vm :type git :host gitlab :repo "emacs-vm/vm"
                   :no-byte-compile t
                   :files (:defaults "lisp/*.elc")
                   )
+    ;; :straight (vm :type git :host github :repo "emacsmirror/vm"
+    ;;               :fork (:host github
+    ;;                            :repo "hartzell/vm"
+    ;;                            :branch "oldie"
+    ;;                            ;; :branch "wip"
+    ;;                            )
+    ;;               :no-byte-compile t
+    ;;               :files (:defaults "lisp/*.elc")
+    ;;               )
     :commands (vm)
 
     :init
