@@ -10,12 +10,14 @@
     (add-to-list 'editorconfig-indentation-alist
                  '(swift-mode swift-indent-offset))))
 
-;; highlight-numbers
-;; Highlights magic numbers in programming modes.
-(use-package highlight-numbers
-  :commands highlight-numbers-mode
-  :init
-  (add-hook 'prog-mode-hook #'highlight-numbers-mode))
+;;; NOTE: this interacts badly with beancount support.
+;;;
+;;; ;; highlight-numbers
+;;; ;; Highlights magic numbers in programming modes.
+;;; (use-package highlight-numbers
+;;;   :commands highlight-numbers-mode
+;;;   :init
+;;;   (add-hook 'prog-mode-hook #'highlight-numbers-mode))
 
 ;; rainbow-delimiters
 ;; Highlights parens, brackets, and braces according to their depth.
@@ -55,15 +57,22 @@
   (lsp-semantic-tokens-enable t)
   (lsp-semantic-tokens-honor-refresh-requests t)
   (lsp-terraform-ls-prefill-required-fields t)
-  :hook ((go-mode . lsp-deferred)
+  :hook ((beancount-mode . lsp-deferred)
+         (go-mode . lsp-deferred)
          (python-mode . lsp-deferred)
-	       (rust-mode . lsp-deferred)
+         (rust-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
-	       )
+         )
   :bind
   (:map lsp-mode-map
         ("C-c r" . lsp-rename))
   :config
+  ;; depends on `brew install rustledger
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection '("rledger-lsp"))
+    :major-modes '(beancount-mode)
+    :server-id 'rledger-lsp))
   ;; optional - provides fancier overlays
   (use-package lsp-ui
     :commands lsp-ui-mode

@@ -7,10 +7,11 @@
 
 ;; Use $PATH from user's shell in Emacs.
 (use-package exec-path-from-shell
-  :if (memq window-system (quote (mac ns)))
+  ;; :if (memq window-system (quote (mac ns)))
+  :if (equal system-type 'darwin)
   :defer 0.5
   :config
-  (setq exec-path-from-shell-arguments '("-l"))
+  ;; (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "GOPATH"))
 

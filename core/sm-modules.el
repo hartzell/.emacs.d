@@ -81,6 +81,7 @@
         sm-terraform
         sm-coding-nextflow
         sm-coding-rust
+        gh-accounting
         ))
 
 (defun sm/load-modules ()
