@@ -57,6 +57,7 @@
   (lsp-semantic-tokens-enable t)
   (lsp-semantic-tokens-honor-refresh-requests t)
   (lsp-terraform-ls-prefill-required-fields t)
+  (lsp-terraform-ls-server "tofu-ls")
   :hook ((beancount-mode . lsp-deferred)
          (go-mode . lsp-deferred)
          (python-mode . lsp-deferred)
