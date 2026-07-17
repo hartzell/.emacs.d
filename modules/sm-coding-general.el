@@ -63,11 +63,15 @@
          (python-mode . lsp-deferred)
          (rust-mode . lsp-deferred)
          (terraform-mode . lsp-deferred)
+         (zig-mode . lsp-deferred)
          )
   :bind
   (:map lsp-mode-map
         ("C-c r" . lsp-rename))
   :config
+  (setq lsp-zig-enable-build-on-save t)
+  (setq lsp-zig-build-on-save-step "check")
+  (setq lsp-zig-trace-server t)
   ;; depends on `brew install rustledger
   (lsp-register-client
    (make-lsp-client

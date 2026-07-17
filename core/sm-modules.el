@@ -82,6 +82,7 @@
         sm-coding-nextflow
         sm-coding-rust
         gh-accounting
+        sm-coding-zig
         ))
 
 (defun sm/load-modules ()
